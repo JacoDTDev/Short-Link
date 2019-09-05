@@ -15,7 +15,8 @@ export default class Link extends React.Component{
         e.preventDefault();
 
         if(url){
-            Links.insert({url, userId: Meteor.userId()});
+         // not used anymore, use method instead   Links.insert({url, userId: Meteor.userId()});
+            Meteor.call('links.insert',url); //we dont always have to add a callback method like shown here
             //to clear
             this.ref.url.value='';
         }
