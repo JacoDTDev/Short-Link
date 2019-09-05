@@ -12,5 +12,6 @@ Tracker.autorun(()=>{
 
 Meteor.startup(() => {
   // code to run on client at startup
+    Meteor.call('greetUser',(err,res)=>{console.log('Greet user Arument','Jaco',err,res)});
     ReactDOM.render(routes, document.getElementById('app'));
 });

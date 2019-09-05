@@ -8,3 +8,11 @@ if(Meteor.isServer){
         return Links.find({userId:this.userId});
     });
 }
+//to define meteor methods
+Meteor.methods({
+    greetUser(name='user'){
+        console.log('greetUser is running');
+        return 'Hello ${name}';
+    }
+
+});
