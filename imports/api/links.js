@@ -10,9 +10,19 @@ if(Meteor.isServer){
 }
 //to define meteor methods
 Meteor.methods({
-    greetUser(name='user'){
+    greetUser(name){
         console.log('greetUser is running');
-        return 'Hello ${name}';
+
+        if(!name){
+            throw new Meteor.Error('invalid-argument','Name is required');
+        }
+        return `Hello ${name}`;
+    },
+    addNumbers(a,b){
+        if(typeof a !=='number' || typeof b !=='number') {
+            throw new Meteor.Error('invalid-type', 'Number must be entered');
+        }
+       return (a+b);
     }
 
 });

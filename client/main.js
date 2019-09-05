@@ -12,6 +12,11 @@ Tracker.autorun(()=>{
 
 Meteor.startup(() => {
   // code to run on client at startup
-    Meteor.call('greetUser',(err,res)=>{console.log('Greet user Arument','Jaco',err,res)});
+    Meteor.call('greetUser','Jaco',(err,res)=>{
+        console.log('Greet user Arument',err,res);
+    });
+   Meteor.call('addNumbers',6,5,(err,res)=>{
+       console.log('Greet user Arument',err,res);
+   });
     ReactDOM.render(routes, document.getElementById('app'));
 });
