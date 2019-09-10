@@ -1,13 +1,13 @@
 .boxed-view{
   align-items: center;//in middle height
-  background: #dddddd;
+  background: $boxed-view-overlay-bg; // color now in the variables file
   display: flex;//in one line
   justify-content: center;
   height: 100vh;//100% of view on page view height(vh)
   width: 100vw;//100% of view on page view width(vw)
 }
 .boxed-view__box{
-  background-color: white;
+  background-color: $boxed-view-bg;
   padding: 2.4rem;
   text-align: center;
   width: 24rem;
