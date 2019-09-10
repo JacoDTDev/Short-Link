@@ -37,6 +37,7 @@ export default class LinksListItem extends React.Component{
         }
         return <p>{this.props.visitedCount} {visitMessage} {visitedMessage}</p>
     }
+
     render() {
         return (
             <div>
