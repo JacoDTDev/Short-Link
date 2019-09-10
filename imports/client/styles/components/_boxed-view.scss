@@ -1,0 +1,14 @@
+.boxed-view{
+  align-items: center;//in middle height
+  background: #dddddd;
+  display: flex;//in one line
+  justify-content: center;
+  height: 100vh;//100% of view on page view height(vh)
+  width: 100vw;//100% of view on page view width(vw)
+}
+.boxed-view__box{
+  background-color: white;
+  padding: 2.4rem;
+  text-align: center;
+  width: 24rem;
+}
