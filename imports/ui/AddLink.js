@@ -1,11 +1,13 @@
 import React from "react";
+import Modal from 'react-modal';
 import {Meteor} from "meteor/meteor";
 
 export default class AddLink extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            url:''
+            url:'',
+            isOpen: false
         };
     }
     onFormSubmit(e){
@@ -17,7 +19,7 @@ export default class AddLink extends React.Component{
             // not used anymore, use method instead   Links.insert({url, userId: Meteor.userId()});
             Meteor.call('links.insert',url,(err,res)=>{
                 if(!err){
-                    this.setState({url:''});
+                    this.setState({url:'', isOpen: false});
                 }
             });
             //to clear
@@ -33,16 +35,20 @@ export default class AddLink extends React.Component{
     render(){
         return(
             <dev>
-                <p>Add Link</p>
-                <form onSubmit={this.onFormSubmit.bind(this)}>
-                    <input
-                        type="text"
-                        placeholder="URL"
-                        value={this.state.url}
-                        onChange={this.onFormChange.bind(this)}
-                    />
-                    <button>Add Link</button>
-                </form>
+                <button onClick={()=>{this.setState({isOpen:true})}}>+ Add Link</button>
+                <Modal isOpen={this.state.isOpen} contentLabel="Add Link">
+                    <p>Add Link</p>
+                    <form onSubmit={this.onFormSubmit.bind(this)}>
+                        <input
+                            type="text"
+                            placeholder="URL"
+                            value={this.state.url}
+                            onChange={this.onFormChange.bind(this)}
+                        />
+                        <button>Add Link</button>
+                    </form>
+                    <button onClick={()=>{this.setState({isOpen:false, url:''})}}>Cancel</button>
+                </Modal>
             </dev>
         );
     }

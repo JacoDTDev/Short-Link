@@ -8,15 +8,15 @@ import '../imports/startup/simple-schema-configuration.js';
 
 Meteor.startup(() => {
   // code to run on server at startup
-    let now = new Date();
-    console.log(now);
-    //Jan 4th, 2019
-    let monentNow = moment(0);
-    console.log(monentNow.format('MMM Do,YYYY'));
-    //1:15pm
-    console.log(monentNow.format('H:mm a'));
-    //in words
-    console.log(monentNow.fromNow());
+  //   let now = new Date();
+  //   console.log(now);
+  //   //Jan 4th, 2019
+  //   let monentNow = moment(0);
+  //   console.log(monentNow.format('MMM Do,YYYY'));
+  //   //1:15pm
+  //   console.log(monentNow.format('H:mm a'));
+  //   //in words
+  //   console.log(monentNow.fromNow());
     WebApp.connectHandlers.use((req, res, next)=>{
         const _id = req.url.slice(1);
         const link = Links.findOne({_id});
