@@ -16,3 +16,11 @@
   display: flex;
   flex-direction: column;//stack them on top of each other
 }
+.boxed-view--modal{
+  background: fade_out($boxed-view-overlay-bg, .3);//to give the nice look when the model is open
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
