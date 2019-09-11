@@ -25,8 +25,8 @@ export default class LinkedListFilers extends React.Component{
     render() {
         return(
             <div>
-                <lable>
-                    <input type='checkbox' checked={!this.state.showVisible} onChange={(e)=>{
+                <lable className="checkbox">
+                    <input className='checkbox__box' type='checkbox' checked={!this.state.showVisible} onChange={(e)=>{
                         console.log(e.target.checked);
                         Session.set('showVisible',!e.target.checked);
                     }}/>

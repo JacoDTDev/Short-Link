@@ -6,10 +6,12 @@ import AddLink from "./AddLink";
 import LinksListFilters from './LinkListFilters';
 
 export default ()=>{
-    return <div>
+    return <div >
         <PrivateHeader title='Your Links'/>
+        <div className="page-content">
         <LinksListFilters/>
         <AddLink/>
         <LinksList/>
+        </div>
     </div>
 }
